@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <!-- memungkinkan untuk dapat mengubah nilai
+    secara halus pada elemen html -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 900px;
+            margin: 10px auto;
+            border: 3px solid black;
+        }
+
+        .kotak {
+            width: 100px;
+            height: 100px;
+            background-color: darkorchid;
+            /* transition:
+            [property] <durasi> [fungsi/timing function] [delay]
+            */
+            /* transition: margin-left 1s; */
+            line-height: 100px;
+            text-align: center;
+            margin: 5px;
+            color: white;
+        }
+        
+        /* delay: waktu tunggu */
+        .kotak1 { transition: all 2s ease 2s; }
+
+        .kotak2 { transition: all 2s ease-in; }
+
+        .kotak3 { transition: all 2s ease-in-out; }
+
+        .kotak4 { transition: all 2s ease-out; }
+
+        .kotak5 { transition: all 2s linear; }
+
+        .kotak6 { transition: all 2s cubic-bezier(0, 0.9, 1, 0.22); }
+
+        .kotak7 { transition: margin-left 2s, transform 3s 2s, background-color 500ms 3s; }
+
+        .container:hover .kotak {
+            transform: rotate(720deg);
+            background-color: royalblue;
+            margin-left: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="kotak kotak1">ease</div>
+        <div class="kotak kotak2">ease-in</div>
+        <div class="kotak kotak3">ease-in-out</div>
+        <div class="kotak kotak4">ease-out</div>
+        <div class="kotak kotak5">linear</div>
+        <div class="kotak kotak6">cubic bezier</div>
+        <div class="kotak kotak7">experiment</div>
+    </div>
+</body>
+</html>
